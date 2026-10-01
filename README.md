@@ -1,532 +1,128 @@
-# 🚨 S.I.S.O.
-
-## 🌎 Sistema Inteligente de Detección Sísmica
-
-> 🔎 **Detectar · 🧠 Procesar · 🚨 Alertar · 💻 Monitorear**
-
-![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-yellow)
-![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue)
-![Lenguaje](https://img.shields.io/badge/Lenguaje-JavaScript-yellow)
-![Hardware](https://img.shields.io/badge/Hardware-ESP32-green)
-![UI](https://img.shields.io/badge/UI-Bootstrap-purple)
-
----
-
-# 📌 Descripción del proyecto
+🚨 S.I.S.O. — Sistema Inteligente de Detección Sísmica
 
-**S.I.S.O. (Sistema Inteligente de Detección Sísmica)** 
-🔗 El proyecto combina diferentes áreas:
+S.I.S.O. es un proyecto académico que combina software y hardware para detectar movimientos mediante sensores, procesar la información y generar alertas cuando se superan determinados parámetros.
 
-* 💻 Programación
-* 🔌 Electrónica
-* 📡 Sensores
-* 🌐 Desarrollo web
-* 🤖 Internet de las Cosas (IoT)
-* 🧠 Procesamiento de datos
-* 🚨 Sistemas de alerta
+El sistema utiliza un ESP32 conectado a un sensor MPU6050 y cuenta con una interfaz web desarrollada con React para visualizar el estado del sistema.
 
-El objetivo es integrar **hardware y software** dentro de un mismo sistema de monitoreo.
+🎯 Objetivo
 
-> ⚠️ **Importante:** S.I.S.O. 
----
+Desarrollar un prototipo capaz de:
 
-# 🎯 Objetivos
+- 📡 Detectar movimientos mediante sensores.
+- ⚙️ Procesar los datos utilizando un ESP32.
+- 📊 Analizar los valores obtenidos.
+- 🚨 Generar alertas cuando se cumplen determinadas condiciones.
+- 💻 Mostrar la información mediante una interfaz web.
 
-## 🏆 Objetivo general
+⚙️ Funcionamiento
 
-Desarrollar un prototipo capaz de **detectar movimientos mediante sensores, procesar los datos obtenidos y generar una alerta** cuando se cumplan determinados parámetros.
+El funcionamiento básico de S.I.S.O. es:
 
-## 📋 Objetivos específicos
+MPU6050 → ESP32 → Procesamiento → Análisis → Alerta → Panel web
 
-* 📡 Detectar movimientos y aceleraciones mediante sensores.
-* 🧠 Utilizar un ESP32 como controlador principal.
-* 📊 Procesar los datos obtenidos por los sensores.
-* ⚙️ Establecer parámetros para determinar diferentes estados.
-* 🚨 Generar alertas ante determinados niveles de movimiento.
-* 💻 Visualizar información mediante una interfaz web.
-* 📝 Registrar los eventos detectados.
-* 🔌 Mostrar el estado de los dispositivos.
-* 🔗 Integrar hardware y software.
+El MPU6050 obtiene los datos de movimiento.
 
----
+El ESP32 recibe y procesa la información.
 
-# 💡 Justificación
+Cuando los valores superan los parámetros establecidos, se genera una alerta y el estado puede visualizarse desde el panel web.
 
-Los movimientos sísmicos pueden producirse de manera inesperada, por lo que resulta importante contar con mecanismos que permitan **detectar cambios de movimiento y comunicar la información obtenida**.
+🔌 Componentes de hardware
 
-S.I.S.O.
+Componente| Función
+🧠 ESP32| Procesamiento y control
+📡 MPU6050| Detección de movimiento
+🔌 Módulo relé| Control de la alarma
+🔊 Bocina / sirena| Alerta sonora
+🖥️ Pantalla OLED| Visualización local
+🔩 Protoboard| Montaje del circuito
 
-* 📡 Detección de movimientos.
-* 📊 Procesamiento de datos.
-* 🚨 Generación de alertas.
-* 💻 Desarrollo de interfaces.
-* 🔌 Integración de hardware y software.
+💻 Tecnologías utilizadas
 
-Además, el proyecto permite aplicar conocimientos adquiridos durante la **Tecnicatura Universitaria en Programación**.
+Frontend
 
----
+- ⚛️ React
+- ⚡ Vite
+- 🟨 JavaScript
+- 🌐 HTML5
+- 🎨 CSS3
+- 🅱️ Bootstrap
 
-# ⚙️ ¿Cómo funciona S.I.S.O.?
+Herramientas
 
-El funcionamiento general del sistema se puede representar de la siguiente manera:
+- 💻 Visual Studio Code
+- 🟢 Node.js
+- 📦 npm
+- 🔀 Git
+- 🐙 GitHub
 
-```text
-        ┌─────────────────────┐
-        │       📡 MPU6050    │
-        │ Sensor de movimiento│
-        └──────────┬──────────┘
-                   │
-                   ▼
-        ┌─────────────────────┐
-        │       🧠 ESP32      │
-        │ Procesamiento datos │
-        └──────────┬──────────┘
-                   │
-                   ▼
-        ┌─────────────────────┐
-        │   📊 Análisis de    │
-        │      valores        │
-        └──────────┬──────────┘
-                   │
-                   ▼
-             ¿Supera el
-              parámetro?
-              /        \
-            NO          SÍ
-            │            │
-            ▼            ▼
-       ┌─────────┐   ┌─────────┐
-       │ 🟢 Normal│   │ 🚨 Alerta│
-       └─────────┘   └────┬────┘
-                           │
-                           ▼
-                  ┌────────────────┐
-                  │ 💻 Panel S.I.S.O.│
-                  └────────────────┘
-```
+Hardware
 
-## 1️⃣ 📡 Detección
+- 🧠 ESP32
+- 📡 MPU6050
+- 🔌 Módulo relé
+- 🖥️ Pantalla OLED
+- 🔊 Bocina / sirena
 
-El sensor **MPU6050** obtiene información relacionada con el movimiento y la aceleración.
+🖥️ Panel de monitoreo
 
-## 2️⃣ 🧠 Procesamiento
+La aplicación web permite visualizar información relacionada con el estado del sistema, los sensores y las alertas.
 
-El **ESP32** recibe los valores provenientes del sensor y realiza el procesamiento correspondiente.
+📸 Capturas
 
-## 3️⃣ 📊 Análisis
+🖥️ Panel principal
 
-Los valores obtenidos son analizados y comparados con los parámetros establecidos para el prototipo.
+Agregar aquí una captura del panel desarrollado con React.
 
-## 4️⃣ 🚨 Alerta
+🔌 Circuito
 
-Cuando se cumplen las condiciones definidas, el sistema puede activar mecanismos de alerta.
+Agregar aquí una fotografía del ESP32 conectado al MPU6050 y los demás componentes.
 
-## 5️⃣ 💻 Monitoreo
+🚨 Sistema de alerta
 
-La información puede ser representada mediante la interfaz web desarrollada con **React**.
+Agregar aquí una fotografía del mecanismo de alerta.
 
----
+🚀 Instalación
 
-# 🔌 Componentes de hardware
+Requisitos
 
-## 🧠 ESP32
+- Node.js
+- npm
+- Git
+- Visual Studio Code
 
-El ESP32 funciona como el **controlador principal** del prototipo.
+📥 Clonar el repositorio
 
-Sus funciones incluyen:
-
-* 📥 Recibir datos del sensor.
-* 🧮 Procesar información.
-* ⚙️ Evaluar condiciones.
-* 🚨 Controlar mecanismos de alerta.
-* 📡 Permitir la comunicación con otros componentes.
-
----
-
-## 📡 MPU6050
-
-El MPU6050 es un módulo que incorpora:
-
-* 📈 Acelerómetro.
-* 🔄 Giroscopio.
-
-En S.I.S.O. se utiliza para obtener información relacionada con el **movimiento y la aceleración**.
-
----
-
-## 🔌 Módulo de relé
-
-El relé permite controlar un dispositivo externo mediante una señal proveniente del sistema.
-
-En el prototipo puede utilizarse para controlar una **🔊 bocina o sirena**.
-
----
-
-## 🔊 Bocina / Sirena
-
-Se utiliza como mecanismo de **alerta sonora** cuando el sistema determina que debe generarse una alerta.
-
----
-
-## 🖥️ Pantalla OLED
-
-La pantalla OLED puede utilizarse para mostrar información directamente en el dispositivo:
-
-* 🟢 Estado del sistema.
-* 📊 Valores obtenidos.
-* 🚨 Estado de alerta.
-
----
-
-## 🔩 Protoboard y cables
-
-La protoboard permite realizar el montaje del circuito.
-
-Los cables Dupont permiten conectar los diferentes componentes.
-
----
-
-# 🧩 Resumen de componentes
-
-| 🔧 Componente    | ⚙️ Función              |
-| ---------------- | ----------------------- |
-| 🧠 ESP32         | Control y procesamiento |
-| 📡 MPU6050       | Detección de movimiento |
-| 🔌 Relé          | Control de dispositivos |
-| 🔊 Bocina/Sirena | Alerta sonora           |
-| 🖥️ OLED         | Visualización local     |
-| 🔩 Protoboard    | Montaje                 |
-| 🔗 Cables Dupont | Conexiones              |
-
----
-
-# 💻 Tecnologías utilizadas
-
-## ⚛️ Frontend
-
-| 💻 Tecnología | 📌 Utilización            |
-| ------------- | ------------------------- |
-| ⚛️ React      | Desarrollo de la interfaz |
-| ⚡ Vite        | Entorno de desarrollo     |
-| 🟨 JavaScript | Lógica de la aplicación   |
-| 🌐 HTML5      | Estructura                |
-| 🎨 CSS3       | Estilos                   |
-| 🅱️ Bootstrap | Diseño y componentes      |
-
-## 🔌 Hardware
-
-* 🧠 ESP32
-* 📡 MPU6050
-* 🔌 Módulo de relé
-* 🖥️ Pantalla OLED
-* 🔊 Bocina / Sirena
-
-## 🛠️ Herramientas
-
-* 💻 Visual Studio Code
-* 🔀 Git
-* 🐙 GitHub
-* 🟢 Node.js
-* 📦 npm
-
----
-
-# 🖥️ Panel de monitoreo
-
-S.I.S.O. cuenta con una interfaz web desarrollada con **⚛️ React**.
-
-El panel tiene como objetivo centralizar la información del sistema y facilitar su monitoreo.
-
-### 📊 Información contemplada
-
-* 🚦 Estado general del sistema.
-* 📡 Estado de los sensores.
-* 📈 Valores registrados.
-* 🚨 Estado de las alertas.
-* 🔊 Estado de la alarma.
-* 📋 Historial de eventos.
-* 🕐 Fecha y hora.
-
----
-
-# 📸 Capturas del proyecto
-
-## 🖥️ Panel principal
-
-📌 **Agregar aquí una captura real del panel desarrollado con React.**
-
-```text
-┌─────────────────────────────────┐
-│                                 │
-│     📸 CAPTURA DEL PANEL        │
-│                                 │
-└─────────────────────────────────┘
-```
-
----
-
-## 🔌 Circuito
-
-📌 **Agregar aquí una fotografía real del ESP32 conectado al MPU6050 y los demás componentes.**
-
-```text
-┌─────────────────────────────────┐
-│                                 │
-│     📸 FOTO DEL CIRCUITO        │
-│                                 │
-└─────────────────────────────────┘
-```
-
----
-
-## 🚨 Sistema de alerta
-
-📌 **Agregar aquí una fotografía o captura del mecanismo de alerta.**
-
-```text
-┌─────────────────────────────────┐
-│                                 │
-│     📸 FOTO DE LA ALERTA        │
-│                                 │
-└─────────────────────────────────┘
-```
-
----
-
-# 🗂️ Estructura del proyecto
-
-```text
-SISO/
-│
-├── 📁 public/
-│   └── ...
-│
-├── 📁 src/
-│   ├── 📁 components/
-│   │   └── ...
-│   │
-│   ├── 📄 App.jsx
-│   ├── 📄 main.jsx
-│   └── ...
-│
-├── 📄 index.html
-├── 📦 package.json
-├── 📦 package-lock.json
-├── ⚙️ vite.config.js
-└── 📖 README.md
-```
-
----
-
-# 🚀 Instalación
-
-## 📋 Requisitos
-
-Antes de ejecutar el proyecto es necesario tener instalado:
-
-* 🟢 Node.js
-* 📦 npm
-* 🔀 Git
-* 💻 Visual Studio Code
-
-## 1️⃣ 📥 Clonar el repositorio
-
-```bash
 git clone URL_DEL_REPOSITORIO
-```
 
-## 2️⃣ 📂 Ingresar al proyecto
+📂 Ingresar al proyecto
 
-```bash
 cd SISO
-```
 
-## 3️⃣ 📦 Instalar dependencias
+📦 Instalar dependencias
 
-```bash
 npm install
-```
 
-## 4️⃣ ▶️ Ejecutar el proyecto
+▶️ Ejecutar el proyecto
 
-```bash
 npm run dev
-```
 
-Vite mostrará en la terminal la dirección local donde estará disponible la aplicación.
+Luego, Vite mostrará en la terminal la dirección local para acceder a la aplicación.
 
-Por ejemplo:
+👥 Integrantes
 
-```text
-http://localhost:5173/
-```
+- 👩‍💻 Ana Carolina Palavecino
+- 👩‍💻 Rocío Belén Palavecino
 
----
+🎓 Tecnicatura Universitaria en Programación
 
-# 🧪 Pruebas
+📚 Proyecto académico
 
-Las pruebas tienen como objetivo comprobar el funcionamiento de los diferentes componentes del sistema.
+S.I.S.O. — Sistema Inteligente de Detección Sísmica
 
-### 📡 Pruebas del sensor
+Proyecto académico que integra:
 
-Verificar que el **MPU6050** pueda proporcionar valores de movimiento.
-
-### 🧠 Pruebas del ESP32
-
-Comprobar que el ESP32 pueda recibir y procesar correctamente la información.
-
-### 🚨 Pruebas de alerta
-
-Comprobar la activación del mecanismo de alerta cuando se cumplen los parámetros establecidos.
-
-### 💻 Pruebas de interfaz
-
-Verificar que el panel web muestre correctamente la información.
-
-### 🔗 Pruebas de integración
-
-Comprobar la comunicación entre los diferentes componentes.
+💻 Programación · 🌐 Desarrollo web · 🔌 Electrónica · 📡 Sensores · 🧠 Microcontroladores
 
 ---
 
-# 📊 Resultados esperados
-
-Se espera que el prototipo pueda:
-
-1. 📡 Detectar movimiento.
-2. 📥 Obtener los valores del sensor.
-3. 🧠 Procesar la información mediante el ESP32.
-4. 📊 Analizar los valores obtenidos.
-5. 🚦 Determinar el estado correspondiente.
-6. 🚨 Generar una alerta cuando corresponda.
-7. 💻 Mostrar la información en el sistema de monitoreo.
-
-
----
-
-# 🚀 Futuras mejoras
-
-## 📡 Comunicación
-
-* 📶 Comunicación inalámbrica entre dispositivos.
-* 🔗 Incorporación de varios nodos de medición.
-* 🧠 Comunicación entre diferentes ESP32.
-
-## 📊 Datos
-
-* 💾 Almacenamiento de mediciones.
-* 📋 Historial de eventos.
-* 📈 Gráficos en tiempo real.
-* 📊 Análisis de datos históricos.
-
-## 🚨 Alertas
-
-* 🟢🟡🔴 Diferentes niveles de alerta.
-* 📱 Notificaciones.
-* 🔊 Mejoras en la alerta sonora.
-* 💡 Alertas visuales.
-
-## 📍 Localización
-
-* 📍 Geolocalización de los nodos.
-* 🗺️ Visualización de dispositivos en un mapa.
-
-## 🤖 Inteligencia
-
-* 🧠 Análisis avanzado de los datos.
-* 📊 Clasificación de diferentes tipos de movimiento.
-* 🤖 Posible incorporación de técnicas de inteligencia artificial como línea futura de investigación.
-
----
-
-# 🔄 Evolución del proyecto
-
-```text
-          📋 ETAPA 1
-       Diseño del proyecto
-              ↓
-          💻 ETAPA 2
-    Desarrollo de la interfaz
-              ↓
-          🧠 ETAPA 3
-      Configuración ESP32
-              ↓
-          📡 ETAPA 4
-       Integración MPU6050
-              ↓
-          📊 ETAPA 5
-     Procesamiento de datos
-              ↓
-          🚨 ETAPA 6
-      Sistema de alertas
-              ↓
-          🔗 ETAPA 7
-      Integración completa
-              ↓
-          🧪 ETAPA 8
-       Pruebas y mejoras
-```
-
----
-
-# 📚 Conocimientos aplicados
-
-Durante el desarrollo de S.I.S.O. se aplican conocimientos relacionados con:
-
-* 💻 Programación
-* 🟨 JavaScript
-* ⚛️ React
-* 🌐 Desarrollo web
-* 🔌 Electrónica
-* 📡 Sensores
-* 🧠 Microcontroladores
-* 🤖 IoT
-* 📊 Procesamiento de datos
-* 🎨 Diseño de interfaces
-* 🔀 Control de versiones
-* 🐙 Git y GitHub
-* 🧪 Pruebas de software
-
----
-
-# 👥 Integrantes
-
-## 👩‍💻 Ana Carolina Palavecino
-
-🎓 **Tecnicatura Universitaria en Programación**
-
-## 👩‍💻 Rocío Belén Palavecino
-
-🎓 **Tecnicatura Universitaria en Programación**
-
----
-
-# 🎓 Proyecto académico
-
-## 🚨 S.I.S.O. — Sistema Inteligente de Detección Sísmica
-
-Proyecto desarrollado en el marco de la **Tecnicatura Universitaria en Programación**.
-
-El proyecto integra conocimientos de:
-
-💻 Programación
-🌐 Desarrollo web
-🔌 Electrónica
-📡 Sensores
-🧠 Microcontroladores
-🤖 IoT
-📊 Procesamiento de datos
-
----
-
-# ⭐ S.I.S.O.
-
-## 🚨 Sistema Inteligente de Detección Sísmica
-
-> 🔎 **Detectar.**
-> 🧠 **Procesar.**
-> 🚨 **Alertar.**
-> 💻 **Monitorear.**
-
-### 💻 Software + 🔌 Hardware + 📡 Sensores + 🤖 IoT
-
+⭐ S.I.S.O. — Detectar · Procesar · Alertar · Monitorear
