@@ -1,6 +1,6 @@
-🚨 S.I.S.O. — Sistema Inteligente de Detección Sísmica 🌎
+🚨 S.D.S.T. — Sistema Inteligente de Detección Sísmica 🌎
 
-S.I.S.O. es un proyecto académico que combina 💻 software y 🔌 hardware para detectar movimientos mediante 📡 sensores, procesar la información y generar 🚨 alertas cuando se superan determinados parámetros.
+S.D.S.T. es un proyecto académico que combina 💻 software y 🔌 hardware para detectar movimientos mediante 📡 sensores, procesar la información y generar 🚨 alertas cuando se superan determinados parámetros.
 
 El sistema utiliza un 🧠 ESP32 conectado a un 📡 sensor MPU6050 y cuenta con una 🌐 interfaz web desarrollada con ⚛️ React para visualizar el estado del sistema.
 
@@ -16,7 +16,7 @@ Desarrollar un prototipo capaz de:
 
 ⚙️ Funcionamiento
 
-El funcionamiento básico de S.I.S.O. es:
+El funcionamiento básico de S.D.S.T. es:
 
 📡 MPU6050 → 🧠 ESP32 → ⚙️ Procesamiento → 📊 Análisis → 🚨 Alerta → 💻 Panel web
 
@@ -103,7 +103,7 @@ git clone URL_DEL_REPOSITORIO
 
 📂 Ingresar al proyecto
 
-cd SISO
+cd SDST
 
 📦 Instalar dependencias
 
@@ -124,7 +124,7 @@ Luego, ⚡ Vite mostrará en la terminal la dirección local para acceder a la a
 
 📚 Proyecto académico
 
-🚨 S.I.S.O. — Sistema Inteligente de Detección Sísmica
+🚨 S.D.S.T. — Sistema Inteligente de Detección Sísmica
 
 Este proyecto integra:
 
@@ -132,4 +132,4 @@ Este proyecto integra:
 
 ---
 
-⭐ S.I.S.O. — Detectar · Procesar · Alertar · Monitorear 🚨
+⭐ S.D.S.T. — Detectar · Procesar · Alertar · Monitorear 🚨
