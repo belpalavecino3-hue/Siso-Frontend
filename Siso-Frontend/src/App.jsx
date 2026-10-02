@@ -1,122 +1,63 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import Alertapanel from './components/Alertapanel';
+import SidebarLeft from './components/SidebarLeft';
+import SidebarRight from './components/SiderbarRight';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [ultimoSismo, setUltimoSismo] = useState(null);
+  const estaciones = [
+    "Estación San Miguel de Tucumán", 
+    "Estación Tafí del Valle", 
+    "Estación Yerba Buena", 
+    "Estación Concepción", 
+    "Estación Trancas"
+  ];
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+  useEffect(() => {
+    // Simulamos un evento sísmico esporádico cada 10 segundos para que no esté cambiando constantemente
+    const intervalo = setInterval(() => {
+      const magnitud = (Math.random() * (7.0 - 3.0) + 3.0).toFixed(1);
+      const profundidad = Math.floor(Math.random() * 50) + 10;
+      const estacion = estaciones[Math.floor(Math.random() * estaciones.length)];
+      
+      setUltimoSismo({
+        estacion,
+        magnitud: parseFloat(magnitud),
+        profundidad,
+        fecha: new Date().toLocaleTimeString(),
+        alerta: magnitud >= 5.0 // Solo activa la alerta roja si es mayor o igual a 5.0
+      });
+    }, 10000);
 
-      <div className="ticks"></div>
+    return () => clearInterval(intervalo);
+  }, []);
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+return (
+    <div className="bg-dark text-white min-vh-100 py-4 w-100">
+      <div className="w-100 px-4">
+        {/* Cabecera principal */}
+        <div className="text-center mb-5">
+          <h1 className="fw-bold mb-2">Sistema de Detección Sísmica Temprana (SDST)</h1>
+          <p className="text-secondary">Panel de control y monitoreo en tiempo real - Tucumán, Argentina</p>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/* Estructura de 3 columnas */}
+        <div className="row align-items-center g-4 w-100 m-0">
+          <div className="col-lg-3">
+            <SidebarLeft />
+          </div>
+
+          <div className="col-lg-6">
+            <Alertapanel sismo={ultimoSismo} />
+          </div>
+
+          <div className="col-lg-3">
+            <SidebarRight />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
