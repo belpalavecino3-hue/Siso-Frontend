@@ -1,18 +1,44 @@
 import React from 'react';
+import { Button, Stack } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const SidebarLeft = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="d-grid gap-3">
-      <div className="p-3 bg-warning text-dark rounded shadow-sm fw-bold text-center" style={{ cursor: 'pointer' }}>
-        Terremotos Registrados
-      </div>
-      <div className="p-3 bg-warning text-dark rounded shadow-sm fw-bold text-center" style={{ cursor: 'pointer' }}>
-        Hospitales Públicos
-      </div>
-      <div className="p-3 bg-warning text-dark rounded shadow-sm fw-bold text-center" style={{ cursor: 'pointer' }}>
-        Teléfonos de Emergencia
-      </div>
-    </div>
+    <>
+      <Stack gap={3} className="w-100">
+        <Button
+          variant="warning"
+          size="lg"
+          className="fw-bold py-3 text-dark shadow-sm"
+          onClick={() => navigate('/terremotos')}
+        >
+          <i className="fa-solid fa-house-chimney-crack me-2"></i>
+          Terremotos Registrados
+        </Button>
+
+        <Button
+          variant="warning"
+          size="lg"
+          className="fw-bold py-3 text-dark shadow-sm"
+          onClick={() => navigate('/hospitales')}
+        >
+          <i className="fa-solid fa-hospital-user me-2"></i>
+          Hospitales Públicos
+        </Button>
+
+        <Button
+          variant="warning"
+          size="lg"
+          className="fw-bold py-3 text-dark shadow-sm"
+          onClick={() => navigate('/emergencias')}
+        >
+          <i className="fa-solid fa-phone-volume me-2"></i>
+          Teléfonos de Emergencia
+        </Button>
+      </Stack>
+    </>
   );
 };
 
