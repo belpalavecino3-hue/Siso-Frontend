@@ -5,7 +5,7 @@ const Alertapanel = ({ sismo }) => {
 
   return (
     <div className={`p-5 rounded shadow text-white text-center ${hayAlerta ? 'bg-danger' : 'bg-success'}`}>
-      <h1 className="display-4 fw-bold">{hayAlerta ? '"A"' : '🟢'}</h1>
+      <h1 className="display-4 fw-bold">{hayAlerta ? '"RIESGO"' : '🟢'}</h1>
       <h2 className="fw-bold mb-3">
         {hayAlerta ? 'ALERTA DE SISMO' : 'SISTEMA EN MONITOREO'}
       </h2>
