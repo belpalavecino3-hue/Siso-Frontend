@@ -6,6 +6,7 @@ import Terremotos from '../../pages/Terremotos';
 import Error404 from '../../pages/Error404';
 import Emergenias from '../../pages/Emergenias';
 import Login from '../../pages/Login';
+import ComoActuar from '../../pages/ComoActuar';
 
 const Rutas = () => {
   return (
@@ -16,6 +17,7 @@ const Rutas = () => {
       <Route path="/terremotos" element={<Terremotos />} />
       <Route path="/emergencias" element={<Emergenias />} />
       <Route path="*" element={<Error404 />} />
+      <Route path="/como-actuar" element={<ComoActuar />} />
     </Routes>
   );
 };
