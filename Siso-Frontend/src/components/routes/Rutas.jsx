@@ -8,6 +8,8 @@ import Emergenias from '../../pages/Emergenias';
 import Login from '../../pages/Login';
 import ComoActuar from '../../pages/ComoActuar';
 import TiposSismos from '../../pages/TiposSismos';
+import ComoFunciona from '../../pages/ComoFunciona';
+
 const Rutas = () => {
   return (
     <Routes>
@@ -19,6 +21,7 @@ const Rutas = () => {
       <Route path="*" element={<Error404 />} />
       <Route path="/como-actuar" element={<ComoActuar />} />
       <Route path="/tipos-sismos" element={<TiposSismos />} />
+      <Route path="/como-funciona" element={<ComoFunciona />} />
     </Routes>
   );
 };
