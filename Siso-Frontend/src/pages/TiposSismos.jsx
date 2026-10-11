@@ -5,7 +5,7 @@ const TiposSismos = () => {
 const navigate = useNavigate();
 return (
 <Container className="py-4 text-white">
-{/* Header y Boton Volver */}
+
 <Row className="mb-4 align-items-center">
 <Col md={8}>
 <h2 className="fw-bold text-warning d-flex align-items-center gap-2">
@@ -22,12 +22,12 @@ Los sismos son movimientos de la corteza terrestre producidos por la liberación
 </Button>
 </Col>
 </Row>
-{/* Seccion 1: Tipos de Sismos */}
+
 <h4 className="fw-bold text-info mb-3 d-flex align-items-center gap-2">
 <i className="fa-solid fa-layer-group"></i> Tipos de Sismos
 </h4>
 <Row className="g-4 mb-5">
-{/* Sismos Tectonicos */}
+
 <Col md={4}>
 <Card className="bg-dark text-white border-warning shadow h-100">
 <Card.Header className="bg-warning text-dark fw-bold fs-6 d-flex align-items-center gap-2">
@@ -41,7 +41,7 @@ Se producen por el movimiento y desplazamiento de las placas tectónicas. Son lo
 </Card.Body>
 </Card>
 </Col>
-{/* Sismos Volcanicos */}
+
 <Col md={4}>
 <Card className="bg-dark text-white border-danger shadow h-100">
 <Card.Header className="bg-danger text-white fw-bold fs-6 d-flex align-items-center gap-2">
@@ -55,7 +55,7 @@ Están relacionados con la actividad de los volcanes y el movimiento del magma d
 </Card.Body>
 </Card>
 </Col>
-{/* Sismos Inducidos */}
+
 <Col md={4}>
 <Card className="bg-dark text-white border-info shadow h-100">
 <Card.Header className="bg-info text-dark fw-bold fs-6 d-flex align-items-center gap-2">
@@ -70,7 +70,7 @@ Son aquellos relacionados con determinadas actividades realizadas por el ser hum
 </Card>
 </Col>
 </Row>
-{/* Seccion 2: Ondas Sismicas */}
+
 <h4 className="fw-bold text-info mb-3 d-flex align-items-center gap-2">
 <i className="fa-solid fa-wave-square"></i> Ondas Sísmicas
 </h4>
@@ -78,7 +78,7 @@ Son aquellos relacionados con determinadas actividades realizadas por el ser hum
 Cuando ocurre un sismo, la energía se propaga mediante ondas sísmicas.
 </p>
 <Row className="g-4 mb-4">
-{/* Ondas P - Primarias */}
+
 <Col md={12}>
 <Card className="bg-dark text-white border-success shadow">
 <Card.Header className="bg-success text-white fw-bold fs-5 d-flex align-items-center gap-2">
@@ -96,7 +96,7 @@ Son las primeras ondas en llegar porque son las más rápidas.
 Se pueden propagar a través de materiales sólidos y líquidos.
 </ListGroup.Item>
 </ListGroup>
-{/* Destacado SDST */}
+
 <Card className="bg-black bg-opacity-50 border-warning p-3">
 <div className="d-flex align-items-start gap-3">
 <Badge bg="warning" text="dark" className="p-2 fs-5 rounded-circle">
@@ -113,7 +113,7 @@ La detección temprana de las primeras señales de un evento sísmico puede perm
 </Card.Body>
 </Card>
 </Col>
-{/* Ondas S - Secundarias */}
+
 <Col md={6}>
 <Card className="bg-dark text-white border-primary shadow h-100">
 <Card.Header className="bg-primary text-white fw-bold fs-6 d-flex align-items-center gap-2">
@@ -134,7 +134,7 @@ Se propagan principalmente a través de materiales sólidos.
 </Card.Body>
 </Card>
 </Col>
-{/* Ondas Superficiales */}
+
 <Col md={6}>
 <Card className="bg-dark text-white border-warning shadow h-100">
 <Card.Header className="bg-warning text-dark fw-bold fs-6 d-flex align-items-center gap-2">

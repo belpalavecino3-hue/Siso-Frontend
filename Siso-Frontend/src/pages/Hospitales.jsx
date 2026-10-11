@@ -7,7 +7,6 @@ const Hospitales = () => {
   const [enZona, setEnZona] = useState(false);
   const [ubicacionError, setUbicacionError] = useState(false);
 
-  // Lista mock de hospitales públicos de Tucumán
   const hospitalesTucuman = [
     {
       id: 1,
@@ -53,7 +52,6 @@ const Hospitales = () => {
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
 
-          // Rango geográfico aproximado para la provincia de Tucumán
           const tucumanLatMin = -28.0;
           const tucumanLatMax = -26.0;
           const tucumanLonMin = -66.2;

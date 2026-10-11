@@ -26,7 +26,6 @@ const ComoActuar = () => {
 
       
       <Row className="g-4">
-        {/* Dentro de un edificio */}
         <Col md={6} lg={4}>
           <Card className="bg-dark text-white border-warning shadow h-100">
             <Card.Header className="bg-warning text-dark fw-bold fs-5 d-flex align-items-center gap-2">
@@ -55,7 +54,6 @@ const ComoActuar = () => {
           </Card>
         </Col>
 
-        {/* para afuera */}
         <Col md={6} lg={4}>
           <Card className="bg-dark text-white border-success shadow h-100">
             <Card.Header className="bg-success text-white fw-bold fs-5 d-flex align-items-center gap-2">
@@ -78,7 +76,6 @@ const ComoActuar = () => {
           </Card>
         </Col>
 
-        {/* Despues del sismo */}
         <Col md={12} lg={4}>
           <Card className="bg-dark text-white border-info shadow h-100">
             <Card.Header className="bg-info text-dark fw-bold fs-5 d-flex align-items-center gap-2">
@@ -105,7 +102,6 @@ const ComoActuar = () => {
         </Col>
       </Row>
 
-      {/* Nota informativa SDST */}
       <Row className="mt-4">
         <Col>
           <Card className="bg-dark border-danger text-white shadow">
