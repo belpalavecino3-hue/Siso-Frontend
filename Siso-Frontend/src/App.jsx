@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Rutas from './components/routes/Rutas';
 import SplashScreen from './components/SplashScreen';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [mostrarSplash, setMostrarSplash] = useState(true);
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
       {mostrarSplash && <SplashScreen fadeOut={fadeOut} />}
+      <ScrollToTop />
       <Navbar />
       <Rutas />
     </>
