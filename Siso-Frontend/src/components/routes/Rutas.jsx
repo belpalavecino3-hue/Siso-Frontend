@@ -9,9 +9,11 @@ import Login from '../../pages/Login';
 import ComoActuar from '../../pages/ComoActuar';
 import TiposSismos from '../../pages/TiposSismos';
 import ComoFunciona from '../../pages/ComoFunciona';
+import Footer from '../Footer';
 
 const Rutas = () => {
   return (
+    <>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
@@ -23,6 +25,9 @@ const Rutas = () => {
       <Route path="/tipos-sismos" element={<TiposSismos />} />
       <Route path="/como-funciona" element={<ComoFunciona />} />
     </Routes>
+     <Footer />
+    </>
+    
   );
 };
 

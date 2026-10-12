@@ -1,8 +1,8 @@
 
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2023 My App. All rights reserved.</p>
+    <footer className="bg-dark text-white text-center py-3 mt-auto">
+      <p className="mb-0">&copy; 2026 Sistema de Detección Sísmica Temprana.</p>
     </footer>
   );
 };
