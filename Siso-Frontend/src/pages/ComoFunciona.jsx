@@ -62,7 +62,7 @@ const ComoFunciona = () => {
           </Card>
         </Col>
 
-        
+
         <Col md={6}>
           <Card className="bg-dark text-white border-success shadow h-100">
             <Card.Header className="bg-success text-white fw-bold fs-5 d-flex align-items-center gap-2">

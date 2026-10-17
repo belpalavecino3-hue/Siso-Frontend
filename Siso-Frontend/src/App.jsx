@@ -10,12 +10,12 @@ function App() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    
+
     const timerFade = setTimeout(() => {
       setFadeOut(true);
     }, 1500);
 
-    
+
     const timerRemove = setTimeout(() => {
       setMostrarSplash(false);
     }, 2300);

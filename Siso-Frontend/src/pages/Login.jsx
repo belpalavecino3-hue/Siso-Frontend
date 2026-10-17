@@ -150,15 +150,15 @@ const Login = () => {
                     <p className="text-secondary small mb-3">{currentUser.email}</p>
                   </div>
                   <div className="d-grid gap-2">
-                    <Button 
-                      variant="warning" 
+                    <Button
+                      variant="warning"
                       onClick={() => navigate('/')}
                       className="fw-bold py-2 text-dark rounded-3"
                     >
                       Ir al Panel Principal
                     </Button>
-                    <Button 
-                      variant="outline-danger" 
+                    <Button
+                      variant="outline-danger"
                       onClick={handleLogout}
                       className="fw-bold py-2 rounded-3 mt-2"
                     >
@@ -215,9 +215,9 @@ const Login = () => {
                           onChange={(e) => setPassword(e.target.value)}
                           className="bg-black bg-opacity-50 text-white border-secondary py-2 px-3 rounded-start-3 border-end-0"
                         />
-                        <Button 
+                        <Button
                           type="button"
-                          variant="outline-secondary" 
+                          variant="outline-secondary"
                           className="border-start-0 border-secondary text-secondary bg-black bg-opacity-50"
                           onClick={() => setShowPassword(!showPassword)}
                         >
@@ -241,7 +241,7 @@ const Login = () => {
 
                     {!isRegisterMode && (
                       <div className="d-flex align-items-center justify-content-between mb-4">
-                        <Form.Check 
+                        <Form.Check
                           type="checkbox"
                           id="keep-logged-in"
                           label="Mantener sesión iniciada"
@@ -252,9 +252,9 @@ const Login = () => {
                       </div>
                     )}
 
-                    <Button 
+                    <Button
                       type="submit"
-                      variant="warning" 
+                      variant="warning"
                       className="w-100 fw-bold py-2 text-dark rounded-3 shadow-sm mb-3 text-uppercase"
                     >
                       {isRegisterMode ? 'Registrarme' : 'Iniciar sesión ahora'}
@@ -262,12 +262,12 @@ const Login = () => {
 
                     {!isRegisterMode && (
                       <div className="text-end mb-3">
-                        <button 
+                        <button
                           type="button"
                           onClick={() => {
                             setModalErrorMessage('');
                             setShowModal(true);
-                          }} 
+                          }}
                           className="btn btn-link text-warning text-decoration-none small p-0 border-0"
                         >
                           ¿Olvidaste tu contraseña?
