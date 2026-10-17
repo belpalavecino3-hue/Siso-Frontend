@@ -81,5 +81,3 @@ src/
 3. *Ejecutar el entorno de desarrolo*  
 
    npm run dev
-   
-
