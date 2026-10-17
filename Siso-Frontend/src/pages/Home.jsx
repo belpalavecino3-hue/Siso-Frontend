@@ -75,8 +75,8 @@ const Home = () => {
       <Row className="align-items-center g-4">
         {/* Columna Izquierda */}
         <Col lg={3} md={4} className="d-flex flex-column gap-3">
-          <Button 
-            variant="warning" 
+          <Button
+            variant="warning"
             className="fw-bold py-3 text-dark rounded-3 shadow d-flex align-items-center justify-content-center gap-2"
             onClick={() => navigate('/terremotos')}
           >
@@ -84,8 +84,8 @@ const Home = () => {
             Terremotos Registrados
           </Button>
 
-          <Button 
-            variant="warning" 
+          <Button
+            variant="warning"
             className="fw-bold py-3 text-dark rounded-3 shadow d-flex align-items-center justify-content-center gap-2"
             onClick={() => navigate('/hospitales')}
           >
@@ -93,8 +93,8 @@ const Home = () => {
             Hospitales Públicos
           </Button>
 
-          <Button 
-            variant="warning" 
+          <Button
+            variant="warning"
             className="fw-bold py-3 text-dark rounded-3 shadow d-flex align-items-center justify-content-center gap-2"
             onClick={() => navigate('/emergencias')}
           >
@@ -145,8 +145,8 @@ const Home = () => {
 
         {/* Columna Derecha */}
         <Col lg={3} md={4} className="d-flex flex-column gap-3">
-          <Button 
-            variant="warning" 
+          <Button
+            variant="warning"
             className="fw-bold py-3 text-dark rounded-3 shadow d-flex align-items-center justify-content-center gap-2"
             onClick={() => navigate('/como-actuar')}
           >
@@ -154,8 +154,8 @@ const Home = () => {
             Cómo Actuar
           </Button>
 
-          <Button 
-            variant="warning" 
+          <Button
+            variant="warning"
             className="fw-bold py-3 text-dark rounded-3 shadow d-flex align-items-center justify-content-center gap-2"
             onClick={() => navigate('/como-funciona')}
           >
@@ -163,8 +163,8 @@ const Home = () => {
             Cómo Funciona la App
           </Button>
 
-          <Button 
-            variant="warning" 
+          <Button
+            variant="warning"
             className="fw-bold py-3 text-dark rounded-3 shadow d-flex align-items-center justify-content-center gap-2"
             onClick={() => navigate('/tipos-sismos')}
           >

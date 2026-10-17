@@ -24,7 +24,7 @@ const ComoActuar = () => {
         </Col>
       </Row>
 
-      
+
       <Row className="g-4">
         <Col md={6} lg={4}>
           <Card className="bg-dark text-white border-warning shadow h-100">

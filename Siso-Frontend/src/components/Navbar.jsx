@@ -14,7 +14,7 @@ const Navbar = () => {
   useEffect(() => {
     cargarUsuario();
 
-  
+
     window.addEventListener('sesionCambiada', cargarUsuario);
 
     return () => {
@@ -40,13 +40,13 @@ const Navbar = () => {
 
         <BsNavbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-          
+
             <BsNavbar.Text className="text-secondary small me-3">
               <i className="fa-solid fa-circle text-success me-1 fs-6"></i>
               Estado: <strong className="text-light">Estaciones Activas</strong>
             </BsNavbar.Text>
 
-            
+
             {usuario ? (
               <NavDropdown
                 title={
@@ -64,7 +64,7 @@ const Navbar = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              
+
               <Nav.Link as={Link} to="/login" className="text-warning p-0 fs-4" title="Iniciar Sesión">
                 <i className="fa-regular fa-circle-user fs-3"></i>
               </Nav.Link>

@@ -28,7 +28,7 @@ const Terremotos = () => {
           alerta: mag >= 4.5
         };
       });
-      
+
 
       setRegistrosHistoricos(datosFormateados);
     } catch (error) {
