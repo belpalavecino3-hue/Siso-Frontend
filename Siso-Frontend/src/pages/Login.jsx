@@ -202,6 +202,7 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="bg-black bg-opacity-50 text-white border-secondary py-2 px-3 rounded-3"
+                        autoComplete='email'
                       />
                     </Form.Group>
 
@@ -214,6 +215,7 @@ const Login = () => {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           className="bg-black bg-opacity-50 text-white border-secondary py-2 px-3 rounded-start-3 border-end-0"
+                          autoComplete='current-password'
                         />
                         <Button
                           type="button"
@@ -235,6 +237,7 @@ const Login = () => {
                           value={confirmPassword}
                           onChange={(e) => setConfirmPassword(e.target.value)}
                           className="bg-black bg-opacity-50 text-white border-secondary py-2 px-3 rounded-3"
+                          autoComplete='current-password'
                         />
                       </Form.Group>
                     )}

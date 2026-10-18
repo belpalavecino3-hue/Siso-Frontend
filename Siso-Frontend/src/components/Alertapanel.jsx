@@ -12,7 +12,6 @@ const Alertapanel = ({ sismo }) => {
       <p className="text-light mb-4">
         {hayAlerta ? 'Sistema de Alerta Temprana Descentralizada' : 'Estaciones sismológicas operando con normalidad'}
       </p>
-      <hr className="bg-white" />
       <div className="mt-3 text-start bg-black bg-opacity-25 p-3 rounded">
         <p className="mb-1"><strong>📍 Última Detección:</strong> {sismo ? sismo.estacion : 'Ninguna registrada'}</p>
         <p className="mb-1"><strong>📊 Magnitud:</strong> {sismo ? `${sismo.magnitud} Richter` : 'Sin registros aún'}</p>
