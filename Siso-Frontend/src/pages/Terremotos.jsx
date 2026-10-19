@@ -4,13 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Terremotos = () => {
   const navigate = useNavigate();
-
-  const [registrosHistoricos, setRegistrosHistoricos] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const API_URL = import.meta.env.VITE_API_URL;
+  const [registrosHistoricos, setRegistrosHistoricos] = useState([]);
 
   const obtenerTerremotos = async () => {
     try {
@@ -19,16 +18,24 @@ const Terremotos = () => {
 
       const datosFormateados = (response.data.features || []).map((sismo, index) => {
         const mag = sismo.properties.mag || 0;
+        const prof = sismo.geometry.coordinates[2];
+
+        let nivelAlerta = { texto: 'Normal', color: 'success' };
+        if (mag >= 5.5) {
+          nivelAlerta = { texto: 'ALERTA ROJA', color: 'danger' };
+        } else if (mag >= 4.0) {
+          nivelAlerta = { texto: 'PRECAUCIÓN', color: 'warning' };
+        }
+
         return {
           id: index + 1,
           fecha: new Date(sismo.properties.time).toLocaleString(),
           estacion: sismo.properties.place || 'Ubicación no especificada',
           magnitud: mag ? mag.toFixed(1) : 'N/A',
-          profundidad: sismo.geometry.coordinates[2] ? `${sismo.geometry.coordinates[2]} km` : 'N/A',
-          alerta: mag >= 4.5
+          profundidad: prof !== undefined ? `${prof.toFixed(1)} km` : 'N/A',
+          alerta: nivelAlerta
         };
       });
-
 
       setRegistrosHistoricos(datosFormateados);
     } catch (error) {
@@ -104,11 +111,12 @@ const Terremotos = () => {
                             <td className="fw-bold">{reg.magnitud}</td>
                             <td>{reg.profundidad}</td>
                             <td>
-                              {reg.alerta ? (
-                                <Badge bg="danger">ALERTA ROJA</Badge>
-                              ) : (
-                                <Badge bg="success">Normal</Badge>
-                              )}
+                              <Badge
+                                bg={reg.alerta?.color || 'secondary'}
+                                text={reg.alerta?.color === 'warning' ? 'dark' : 'white'}
+                              >
+                                {reg.alerta?.texto || 'N/A'}
+                              </Badge>
                             </td>
                           </tr>
                         ))
